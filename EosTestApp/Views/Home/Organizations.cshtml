@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EosTestApp.Models.Organization>
+@{
+    ViewBag.Title = "Все организации";
+}
+<a asp-action="CreateOrganization">Добавить</a>
+<table class="table">
+    <tr>
+        <td>Полное наименование</td>
+        <td>Краткое наименование</td>
+        <td>Сфера деятельности</td>
+        <td>ФИО директора</td>
+        <td>Уставной капитал</td>
+        <td>ИНН</td>
+        <td>КПП</td>
+        <td>ОГРН</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.FullName</td>
+    <td>@item.ShortName</td>
+    <td>@item.ActivitySphere.Name</td>
+    <td>@item.DirectorFIO</td>
+    <td>@item.AuthorizedCapital</td>
+    <td>@item.INN</td>
+    <td>@item.KPP</td>
+    <td>@item.OGRN</td>
+    <td><a asp-action="DeleteOrganization" asp-controller="Home" asp-route-id="@item.Id">Удалить</a></td>
+</tr>
+    }
+</table>

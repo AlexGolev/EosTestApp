@@ -1,0 +1,12 @@
+﻿@model IEnumerable<EosTestApp.Models.ActivitySphere>
+@{
+    ViewBag.Title = "Все сферы деятельности";
+}
+<a asp-action="CreateActivitySphere">Добавить</a>
+<table class="table">
+    <tr><td>Id</td><td>Название</td><td></td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Id</td><td>@item.Name</td><td><a asp-action="DeleteActivitySphere" asp-controller="Home" asp-route-id="@item.Id">Удалить</a></td></tr>
+    }
+</table>

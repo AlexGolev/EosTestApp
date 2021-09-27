@@ -1,0 +1,15 @@
+﻿@model EosTestApp.Models.Organization
+@{
+    ViewBag.Title = "Удаление организации";
+}
+
+<div>
+    <p>Организация будет удалена</p>
+    <div>
+        <form asp-controller="Home" asp-action="DeleteOrganization" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>
